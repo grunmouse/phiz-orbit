@@ -1,0 +1,23 @@
+{
+  "name": "phiz-orbit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "format": "cjs",
+  "private": true,
+  "engine": {
+    "node": ">=9.5.0"
+  },
+  "author": {
+    "name": "Rakov",
+    "email": "grunmouse@mail.ru"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@grunmouse/generic-functions": "link:..\\generic-functions",
+    "@grunmouse/math-stumpff": "link:..\\math-stumpff",
+    "@grunmouse/math-vector": "link:..\\math-vector",
+    "@grunmouse/phiz-const": "link:..\\phiz-const"
+  },
+  "dev": true
+}

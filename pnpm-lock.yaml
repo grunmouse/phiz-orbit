@@ -1,0 +1,11 @@
+dependencies:
+  '@grunmouse/generic-functions': 'link:../generic-functions'
+  '@grunmouse/math-stumpff': 'link:../math-stumpff'
+  '@grunmouse/math-vector': 'link:../math-vector'
+  '@grunmouse/phiz-const': 'link:../phiz-const'
+lockfileVersion: 5.1
+specifiers:
+  '@grunmouse/generic-functions': 'link:..\generic-functions'
+  '@grunmouse/math-stumpff': 'link:..\math-stumpff'
+  '@grunmouse/math-vector': 'link:..\math-vector'
+  '@grunmouse/phiz-const': 'link:..\phiz-const'
