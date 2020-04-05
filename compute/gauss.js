@@ -1,4 +1,4 @@
-let {Vector} = require('@rakov/math-linear-d3');
+let Vector = require('@grunmouse/math-vector').Vector3;
 let common = require('./common.js');
 let {sqrt, acos, sign, abs} = Math;
 let {ellipse} = require('./f_g_equation.js');

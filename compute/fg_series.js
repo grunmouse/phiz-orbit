@@ -1,4 +1,4 @@
-let recursiveFunction = require('@rakov/recursive-function.js');
+let recursiveFunction = require('./recursive-function.js');
 
 let F = recursiveFunction([1], (F, n)=>(F(n-1)*n));
 

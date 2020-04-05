@@ -208,8 +208,8 @@
 	function vekLaplas(mu, Om, i, om, p, eps){
 		var r = vekRadius(Om, i, om, p, eps, 0),
 			v = vekV(mu, Om, i, om, p, eps, 0),
-			c = r.vmul(v); //интеграл площадей
-		return r.ort().mul(-mu).add(v.vmul(c)); // -mu*r.ort + (v x c) вектор Лапласа (направлен в перицентр)
+			c = r.cross(v); //интеграл площадей
+		return r.ort().mul(-mu).add(v.cross(c)); // -mu*r.ort + (v x c) вектор Лапласа (направлен в перицентр)
 	}
 	
 	/**
@@ -219,12 +219,13 @@
 	 * @param v - вектор скорости
 	 */
 	function mapOrbit(mu, r, v){
-		var c = r.vmul(v), //интеграл площадей
+
+		var c = r.cross(v), //интеграл площадей
 			i = acos(c.cosG), // =c.z/c.abs
 			Om = atan2(c.x, -c.y),
 			k = ortK(Om),
-			l = r.ort().mul(-mu).add(v.vmul(c)), // -mu*r.ort + (v x c) вектор Лапласа (направлен в перицентр)
-			om = atan2(l.vmul(k).abs, l.smul(k)),
+			l = r.ort().mul(-mu).add(v.cross(c)), // -mu*r.ort + (v x c) вектор Лапласа (направлен в перицентр)
+			om = atan2(l.cross(k).abs, l.dot(k)),
 			p = c.sq/mu,
 			eps = l.abs/mu,
 			fi = Vector.relAngle(l, r, c); //fi >0 , если (l, r, c) - правая тройка
@@ -258,14 +259,14 @@
 	 */
 	function isInPlant(Om, i, vek){
 		var k = ortK(Om),
-			n = k.vmul(vek);
+			n = k.cross(vek);
 		return n.abs==0 || abs(n.cosG) == abs(cos(i));
 	}
 	
 	function basisOrbit(Om, i){
 		var z = ortNormal(Om, i),
 			x = ortK(Om),
-			y = z.vmul(x);
+			y = z.cross(x);
 		return [x, y, z];
 	}
 	
@@ -279,10 +280,10 @@
 	function basisCone(Om, i, om){
 		var r = vekRadius(Om, i, om, 1, 0, 0),
 			v = vekV(1, Om, i, om, 1, 0, 0),
-			c = r.vmul(v);	
+			c = r.cross(v);	
 		var z = c.ort(), //ortNormal(Om, i),
 			x = r.ort(), //ortLaplas(Om, i, om),
-			y = v.ort().neg(); //z.vmul(x).neg();
+			y = v.ort().neg(); //z.cross(x).neg();
 			
 		return [x, y, z];
 	}

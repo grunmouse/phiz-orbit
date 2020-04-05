@@ -1,4 +1,4 @@
-let {Vector} = require('@grunmouse/math-vector').Vector3;
+let Vector = require('@grunmouse/math-vector').Vector3;
 let {cos, sin} = Math;
 
 	/**

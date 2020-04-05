@@ -12,7 +12,7 @@ function r0(p, eps){
 }
 
 function rPI(p, eps){
-	if(eps<0){
+	if(eps<1){
 		return p/(1-eps);
 	}
 	else{

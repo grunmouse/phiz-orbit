@@ -31,7 +31,7 @@ function healtEsc(sam){
 
 function test(sam){
 	let v1 = gauss(mu, sam.r1, sam.r2, sam.tau, 1, 0.0001)
-	//console.log(sam.r1, v1);
+	console.log(sam.r1, v1);
 	let res = mapOrbit(mu, sam.r1, v1);
 
 	let dif = different(res, sam);

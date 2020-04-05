@@ -1,4 +1,5 @@
-let {Vector} = require('@rakov/math-linear-d3');
+let Vector = require('@grunmouse/math-vector').Vector3;
+
 /*
 
 	k = 0.07436574 (э.р.)**(3/2)/мин

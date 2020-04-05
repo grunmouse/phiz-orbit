@@ -1,6 +1,6 @@
 let {sqrt, asin, abs, cos, sin} = Math;
 let common = require('./common.js');
-let {sin2a, cos2a} = require('@rakov/math-trigonometr');
+let {sin2a, cos2a} = require('./trigonometr.js');
 let {ellipse} = require('./f_g_equation.js');
 let NewRaf = require('./newton_raffson.js');
 
