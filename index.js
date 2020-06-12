@@ -32,20 +32,10 @@
 		{ortRadius, ortTransversal, ortNormal, ortK} = require('./ort.js'),
 		geometry = require('./geometry.js'),
 		Radius = require('./radius.js'),
+		{Period} = require('./period.js'),
 		withS = require('./s.js');
 		
-	/**
-	 * Период обращения по эллиптической орбите
-	 * @param mu - гравитационный параметр
-	 * @param p - параметр орбиты
-	 * @param eps - эксцентриситет орбиты
-	 * @param fi - перицентральный угол (истинная аномалия)
-	 */
-	function Period(mu, p, eps){
-		if(eps>=1) return Infinity;
-		var a = p/(1-eps*eps);
-		return twoPi*sqrt(a/mu)*a;
-	}		
+
 	
 	/**
 	 * Интеграл энергии
